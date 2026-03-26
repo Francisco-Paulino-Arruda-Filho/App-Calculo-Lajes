@@ -4,11 +4,23 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.laje.app",
+    "productName": "Calculadora de Lajes",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis"
+    }
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^41.0.4"
+    "electron": "^41.0.4",
+    "electron-builder": "^26.8.1"
   }
 }
