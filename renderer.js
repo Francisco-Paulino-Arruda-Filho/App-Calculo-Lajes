@@ -13,12 +13,19 @@ let passoAtual = 0;
 let valores = {};
 let resultado = "";
 
+const imagens = {
+  a: "./img/img_a.jpeg", // largura
+  b: "./img/img_b.jpeg", // comprimento
+  h: "./img/img_h.jpeg"  // espessura
+};
+
 const titulo = document.getElementById("titulo");
 const input = document.getElementById("input");
 const progress = document.getElementById("progress");
 const resultadoEl = document.getElementById("resultado");
 const btnVoltar = document.getElementById("btnVoltar");
 const btnProximo = document.getElementById("btnProximo");
+const imagem = document.getElementById("imagem");
 
 function atualizarTela() {
   progress.value = passoAtual;
@@ -35,6 +42,15 @@ function atualizarTela() {
 
     btnVoltar.style.display = passoAtual > 0 ? "inline-block" : "none";
     btnProximo.innerText = passoAtual === campos.length - 1 ? "Calcular" : "Próximo";
+
+    const campoKey = campo.key;
+
+    if (imagens[campoKey]) {
+      imagem.src = imagens[campoKey];
+      imagem.style.display = "block";
+    } else {
+      imagem.style.display = "none";
+    }
 
   } else {
     titulo.innerText = "Resultado";
