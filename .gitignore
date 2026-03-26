@@ -1,4 +1,1 @@
-.buildozer
-bin
-build
-dist
+node_modules

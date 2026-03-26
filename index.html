@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Lajes</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 16px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      padding: 10px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 48%;
+    }
+
+    .primary {
+      background: #22c55e;
+      color: white;
+    }
+
+    .secondary {
+      background: #334155;
+      color: white;
+    }
+
+    progress {
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    pre {
+      text-align: left;
+      margin-top: 15px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2 id="titulo"></h2>
+
+  <input id="input" type="number" placeholder="Digite valor" />
+
+  <progress id="progress" value="0" max="6"></progress>
+
+  <div style="display:flex; justify-content: space-between;">
+    <button class="secondary" onclick="voltar()">Voltar</button>
+    <button class="primary" onclick="proximo()">Próximo</button>
+  </div>
+
+  <pre id="resultado"></pre>
+</div>
+
+<script type="module" src="renderer.js"></script>
+
+</body>
+</html>
