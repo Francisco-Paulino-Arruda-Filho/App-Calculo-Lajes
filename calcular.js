@@ -23,21 +23,18 @@ function calcular(valores) {
       w += (16 * p) / (D * Math.pow(Math.PI, 6)) * (seno / (m * n * Math.pow(termo, 2)));
 
       My += (16 * p) / Math.pow(Math.PI, 4) *
-        (((Math.pow(m / a, 2)) + v * Math.pow(n / b, 2)) / (m * n * Math.pow(termo, 2))) * seno;
-
-      Mx += (16 * p) / Math.pow(Math.PI, 4) *
         ((v * Math.pow(m / a, 2) + Math.pow(n / b, 2)) / (m * n * Math.pow(termo, 2)) * seno);
 
-      Mxy += -(16 * (1 - v) * p) / (Math.pow(Math.PI, 4) * a * b) *
-        (cosseno / Math.pow(termo, 2));
+      Mx += (16 * p) / Math.pow(Math.PI, 4) *
+        (((Math.pow(m / a, 2)) + v * Math.pow(n / b, 2)) / (m * n * Math.pow(termo, 2))) * seno;
     }
   }
 
   return `
 Flecha máxima: ${w.toExponential(4)} m
+Flecha máxima (cm): ${(w * 100).toFixed(4)} cm
 Mx: ${Mx.toFixed(4)}
 My: ${My.toFixed(4)}
-Mxy: ${Mxy.toFixed(4)}
 Rigidez D: ${D.toExponential(2)}
 `;
 }
