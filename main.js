@@ -7,12 +7,16 @@ const __dirname = path.dirname(__filename);
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    show: false,
+    icon: path.join(__dirname, "./img/ifce_logo.png"),
+    autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
     },
   });
+
+  win.maximize(); 
+  win.show();     
 
   win.loadFile("index.html");
 }

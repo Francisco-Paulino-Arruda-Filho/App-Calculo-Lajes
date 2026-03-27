@@ -27,6 +27,17 @@ const btnVoltar = document.getElementById("btnVoltar");
 const btnProximo = document.getElementById("btnProximo");
 const imagem = document.getElementById("imagem");
 
+window.addEventListener("DOMContentLoaded", () => {
+  const splash = document.getElementById("splash");
+  const card = document.querySelector(".card");
+  const btnEntrar = document.getElementById("btnEntrar");
+
+  btnEntrar.addEventListener("click", () => {
+    splash.style.display = "none";
+    card.style.display = "block";
+  });
+});
+
 function atualizarTela() {
   progress.value = passoAtual;
 
