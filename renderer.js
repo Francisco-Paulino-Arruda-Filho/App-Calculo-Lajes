@@ -5,7 +5,7 @@ const campos = [
   { key: "b", label: "Qual valor do comprimento da laje (b) em metros?" },
   { key: "h", label: "Qual valor da espessura da laje (h) em metros?" },
   { key: "v", label: "Qual valor do coeficiente de Poisson (v)?" },
-  { key: "e", label: "Qual valor do módulo de elasticidade (E)?" },
+  { key: "e", label: "Qual valor do módulo de elasticidade em kN/m² (E)?" },
   { key: "p", label: "Qual valor da carga em kN/m² (p₀)?" }
 ];
 
@@ -60,6 +60,7 @@ function atualizarTela() {
     btnVoltar.style.display = "none";
     btnProximo.innerText = "Reiniciar";
   }
+  input.focus();
 }
 
 window.proximo = function () {
@@ -67,9 +68,13 @@ window.proximo = function () {
     const valor = parseFloat(input.value);
 
     if (isNaN(valor)) {
-      alert("Digite um número válido!");
+      erro.innerText = "Digite um número válido!";
+      erro.style.display = "block";
+      input.focus();
       return;
     }
+
+    erro.style.display = "none";
 
     valores[campos[passoAtual].key] = valor;
     passoAtual++;
