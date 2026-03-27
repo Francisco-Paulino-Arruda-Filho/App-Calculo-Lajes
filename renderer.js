@@ -26,6 +26,9 @@ const resultadoEl = document.getElementById("resultado");
 const btnVoltar = document.getElementById("btnVoltar");
 const btnProximo = document.getElementById("btnProximo");
 const imagem = document.getElementById("imagem");
+const splash = document.getElementById("splash");
+const card = document.querySelector(".card");
+const btnHome = document.getElementById("btnHome");
 
 window.addEventListener("DOMContentLoaded", () => {
   const splash = document.getElementById("splash");
@@ -113,5 +116,20 @@ window.voltar = function () {
   }
   atualizarTela();
 };
+
+btnHome.addEventListener("click", () => {
+  // reset geral
+  passoAtual = 0;
+  valores = {};
+  resultado = "";
+
+  input.value = "";
+
+  // volta pra splash
+  card.style.display = "none";
+  splash.style.display = "flex";
+
+  atualizarTela();
+});
 
 atualizarTela();
