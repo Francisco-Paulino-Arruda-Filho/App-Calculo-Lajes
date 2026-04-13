@@ -117,6 +117,12 @@ window.voltar = function () {
   atualizarTela();
 };
 
+input.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    proximo();
+  }
+});
+
 btnHome.addEventListener("click", () => {
   // reset geral
   passoAtual = 0;

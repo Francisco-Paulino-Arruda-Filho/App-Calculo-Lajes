@@ -15,7 +15,7 @@
     },
     "win": {
       "target": "nsis",
-      "icon": "icon.ico"
+      "icon": "img/ico.ico"
     }
   },
   "author": "",
